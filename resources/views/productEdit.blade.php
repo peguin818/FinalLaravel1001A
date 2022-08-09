@@ -51,7 +51,7 @@
                         </div>
                         <div class="md-3">
                             <label for="detail" class="form-label">Details: </label>
-                            <textarea name="detail" id="detail" class="form-control" value="{{$data->prdDetail}}"></textarea>
+                            <textarea name="detail" id="detail" class="form-control">{{$data->prdDetail}}</textarea>
                             @error('detail')
                                 <div class="alert alert-danger" role ="alert">
                                     {{$message}}
@@ -77,7 +77,7 @@
                         </div>
                         <div class="md-3">
                             <label for="producer" class="form-label">Producer: </label>
-                            <input type="text" class="form-control" name="producer" value="{{$data->prdcerID}}">
+                            <input type="text" class="form-control" name="producer" value="{{$data->themeID}}">
                             @error('producer')
                                 <div class="alert alert-danger" role ="alert">
                                     {{$message}}

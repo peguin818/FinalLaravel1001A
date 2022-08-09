@@ -51,7 +51,7 @@
                         </div>-->
                         <div class="md-3">
                             <label for="detail" class="form-label">Details: </label>
-                            <textarea name="detail" id="detail" class="form-control" placeholder="Enter Theme Details here" {{old('detail')}}></textarea>
+                            <textarea type="text" name="detail" id="detail" class="form-control" placeholder="Enter Theme Details here">{{old('detail')}}</textarea>
                             @error('detail')
                                 <div class="alert alert-danger" role ="alert">
                                     {{$message}}
