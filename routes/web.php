@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ThemeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('index', [ProductController::class, 'index']);
-Route::get('add', [ProductController::class, 'add']);
-Route::post('save', [ProductController::class, 'save']);
-Route::get('edit/{id}', [ProductController::class, 'edit']);
-Route::post('update', [ProductController::class, 'update']);
-Route::get('delete/{id}', [ProductController::class, 'delete']);
+Route::get('productList', [ProductController::class, 'index']);
+Route::get('themeList', [ThemeController::class, 'index']);
+Route::get('productAdd', [ProductController::class, 'add']);
+Route::post('productSave', [ProductController::class, 'save']);
+Route::get('productEdit/{id}', [ProductController::class, 'edit']);
+Route::post('productUpdate', [ProductController::class, 'update']);
+Route::get('productDelete/{id}', [ProductController::class, 'delete']);

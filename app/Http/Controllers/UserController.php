@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Users;
+use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 
 class UserController extends Controller
 {
@@ -14,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $data = Users::get();
+        return view('list', compact('data'));
     }
 
     /**

@@ -51,8 +51,8 @@
                                     <td>{{$row->prdImage2}}</td>
                                     <td>{{$row->prdImage3}}</td>
                                     <td>
-                                        <a href="{{url('edit/' . $row->prdID)}}" class="btn btn-primary">Edit</a>
-                                        <a href="{{url('delete/' . $row->prdID)}}" class="btn btn-danger" onclick="return confirm('You are about to delete a Product');">Delete</a>
+                                        <a href="{{url('productEdit/' . $row->prdID)}}" class="btn btn-primary">Edit</a>
+                                        <a href="{{url('productDelete/' . $row->prdID)}}" class="btn btn-danger" onclick="return confirm('You are about to delete a Product');">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

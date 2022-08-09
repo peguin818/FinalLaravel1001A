@@ -10,13 +10,11 @@ class ProductController extends Controller
 {
     public function index() {
         $data = Product::get();
-        //return $data;
-        return view('list', compact('data'));
-
+        return view('productList', compact('data'));
     }
 
     public function add() {
-        return view('add');
+        return view('productAdd');
     }
 
     public function save(Request $request) {
@@ -25,7 +23,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'detail' => 'required',
-            //'image1' => 'required',
+            'image1' => 'required',
             'producer' => 'required',
         ]);
 
@@ -55,7 +53,7 @@ class ProductController extends Controller
 
     public function edit($id) {
         $data = Product::where('prdID', '=', $id)->first();
-        return view('edit', compact('data'));
+        return view('productEdit', compact('data'));
     }
 
     public function update(Request $request) {
