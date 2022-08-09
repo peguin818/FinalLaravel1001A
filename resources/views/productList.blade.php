@@ -47,9 +47,18 @@
                                     <td>{{$row->prdName}}</td>
                                     <td>{{$row->prdPrice}}</td>
                                     <td>{{$row->prdDetail}}</td>
-                                    <td>{{$row->prdImage1}}</td>
-                                    <td>{{$row->prdImage2}}</td>
-                                    <td>{{$row->prdImage3}}</td>
+                                    <td>
+                                        <img src="{{URL::asset('img-test/' . $row->prdImage1)}}" alt="" height="150" width="150">
+                                        <!--{{$row->prdImage1}}-->
+                                    </td>
+                                    <td>
+                                        <img src="{{URL::asset('img-test/' . $row->prdImage2)}}" alt="" height="150" width="150">
+                                        <!--{{$row->prdImage2}}-->
+                                    </td>
+                                    <td>
+                                        <img src="{{URL::asset('img-test/' . $row->prdImage3)}}" alt="" height="150" width="150">
+                                        <!--{{$row->prdImage3}}-->
+                                    </td>
                                     <td>
                                         <a href="{{url('productEdit/' . $row->prdID)}}" class="btn btn-primary">Edit</a>
                                         <a href="{{url('productDelete/' . $row->prdID)}}" class="btn btn-danger" onclick="return confirm('You are about to delete a Product');">Delete</a>
