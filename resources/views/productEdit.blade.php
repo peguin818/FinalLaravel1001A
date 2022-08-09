@@ -8,7 +8,7 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <title>Edit what am I doing?</title>
+        <title>Admin Edit Product</title>
     </head>
     <body>
         <div class="container" style="margin-top: 20px">
@@ -20,7 +20,7 @@
                             {{Session::get('success')}}
                         </div>
                     @endif    
-                    <form method="POST" action="{{url('update')}}">
+                    <form method="POST" action="{{url('productUpdate')}}">
                         @csrf
                         <div class="md-3">
                             <label for="id" class="form-label">ID: </label>
@@ -76,9 +76,9 @@
                             <input type="file" class="form-control" name="image3">
                         </div>
                         <div class="md-3">
-                            <label for="producer" class="form-label">Producer: </label>
-                            <input type="text" class="form-control" name="producer" value="{{$data->themeID}}">
-                            @error('producer')
+                            <label for="theme" class="form-label">Theme: </label>
+                            <input type="text" class="form-control" name="theme" value="{{$data->themeID}}">
+                            @error('theme')
                                 <div class="alert alert-danger" role ="alert">
                                     {{$message}}
                                 </div>
@@ -86,7 +86,7 @@
                         </div>
                         <br><br>
                         <button type="submit" class="btn btn-primary">Update</button>
-                        <a href="{{url('index')}}" class="btn btn-danger">Back</a>
+                        <a href="{{url('productList')}}" class="btn btn-danger">Back</a>
                     </form>
                 </div>
             </div>

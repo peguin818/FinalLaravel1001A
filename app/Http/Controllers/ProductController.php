@@ -66,7 +66,7 @@ class ProductController extends Controller
             'prdImage1' => $request->image1,
             'prdImage2' => $request->image2,
             'prdImage3' => $request->image3,
-            'prdcerID' => $request->producer
+            'themeID' => $request->theme
         ]);
 
         return redirect()->back()->with('success', 'Product update successfully');
