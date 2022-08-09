@@ -23,9 +23,8 @@ class ThemeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function add() {
+        return view('themeAdd');
     }
 
     /**
@@ -34,9 +33,22 @@ class ThemeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function save(Request $request) {
+        $request->validate([
+            'name' => 'required',
+            'detail' => 'required',
+        ]);
+
+        $name = $request->name;
+        $detail = $request->detail;
+
+        $theme = new Theme();
+        
+        $theme->themeName = $name;
+        $theme->themeDetail = $detail;
+        $theme->save();
+
+        return redirect()->back()->with('success', 'Product added successfully');
     }
 
     /**

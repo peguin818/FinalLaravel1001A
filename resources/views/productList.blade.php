@@ -8,7 +8,7 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <title>What am I doing?</title>
+        <title>Admin Products List</title>
     </head>
     <body>
         <div class="contrainer" style="margin: top 20px;">
@@ -21,10 +21,10 @@
                         </div>
                     @endif
                     <div style="margin-right: 5%; float: right">
-                        <a href="{{url ('add')}}" class="btn btn-success pull-right">Add New Product</a>
+                        <a href="{{url ('productAdd')}}" class="btn btn-success pull-right">Add New Product</a>
                     </div>
                     <div style="margin-left: 5%; float: left">
-                        <a href="{{url('index')}}" class="btn btn-success pull-left">Home</a>
+                        <a href="{{url('productList')}}" class="btn btn-success pull-left">Home</a>
                     </div>
                     <br><br>
                     <table class="table table-striped table-bordered">

@@ -22,7 +22,9 @@ Route::get('/', function () {
 Route::get('productList', [ProductController::class, 'index']);
 Route::get('themeList', [ThemeController::class, 'index']);
 Route::get('productAdd', [ProductController::class, 'add']);
+Route::get('themeAdd', [ThemeController::class, 'add']);
 Route::post('productSave', [ProductController::class, 'save']);
+Route::post('themeSave', [ThemeController::class, 'save']);
 Route::get('productEdit/{id}', [ProductController::class, 'edit']);
 Route::post('productUpdate', [ProductController::class, 'update']);
 Route::get('productDelete/{id}', [ProductController::class, 'delete']);

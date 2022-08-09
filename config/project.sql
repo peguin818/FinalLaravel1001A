@@ -27,6 +27,9 @@ create table themes (
     themeDetail varchar(10000)
 );
 
+insert into themes value ( 1, 'Marvel', 'Marvel LEGO Products');
+select * from themes;
+
 create table products (
 	prdID bigint primary key unique,
     prdName varchar(300),

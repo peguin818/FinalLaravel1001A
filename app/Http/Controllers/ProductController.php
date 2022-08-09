@@ -24,7 +24,7 @@ class ProductController extends Controller
             'price' => 'required',
             'detail' => 'required',
             'image1' => 'required',
-            'producer' => 'required',
+            'theme' => 'required',
         ]);
 
         $id = $request->id;
@@ -34,7 +34,7 @@ class ProductController extends Controller
         $image1 = $request->image1;
         $image2 = $request->image2;
         $image3 = $request->image3;
-        $producer = $request->producer;
+        $theme = $request->theme;
 
         $product = new Product();
         
@@ -45,7 +45,7 @@ class ProductController extends Controller
         $product->prdImage1 = $image1;
         $product->prdImage2 = $image2;
         $product->prdImage3 = $image3;
-        $product->prdcerID = $producer;
+        $product->themeID = $theme;
         $product->save();
 
         return redirect()->back()->with('success', 'Product added successfully');
