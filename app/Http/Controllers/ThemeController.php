@@ -48,7 +48,7 @@ class ThemeController extends Controller
         $theme->themeDetail = $detail;
         $theme->save();
 
-        return redirect()->back()->with('success', 'Product added successfully');
+        return redirect()->back()->with('success', 'Theme added successfully');
     }
 
     /**
@@ -68,9 +68,9 @@ class ThemeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        $data = Theme::where('themeID', '=', $id)->first();
+        return view('themeEdit', compact('data'));
     }
 
     /**
@@ -80,9 +80,15 @@ class ThemeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request) {
+        
+        $id = $request->id;
+        Theme::where('themeID', '=', $id)->update([
+            'themeName' => $request->name,
+            'themeDetail' => $request->detail
+        ]);
+
+        return redirect()->back()->with('success', 'Theme update successfully');
     }
 
     /**
@@ -91,8 +97,8 @@ class ThemeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function delete($id) {
+        Theme::where('themeID', '=', $id)->delete();
+        return redirect()->back()->with('success', 'Theme delete successfully');
     }
 }

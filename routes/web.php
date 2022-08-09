@@ -27,4 +27,7 @@ Route::post('productSave', [ProductController::class, 'save']);
 Route::post('themeSave', [ThemeController::class, 'save']);
 Route::get('productEdit/{id}', [ProductController::class, 'edit']);
 Route::post('productUpdate', [ProductController::class, 'update']);
+Route::get('themeEdit/{id}', [ThemeController::class, 'edit']);
+Route::post('themeUpdate', [ThemeController::class, 'update']);
 Route::get('productDelete/{id}', [ProductController::class, 'delete']);
+Route::get('themeDelete/{id}', [ThemeController::class, 'delete']);
