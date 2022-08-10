@@ -20,11 +20,14 @@
                             {{Session::get('success')}}
                         </div>
                     @endif
-                    <div style="margin-right: 5%; float: right">
-                        <a href="{{url ('productAdd')}}" class="btn btn-success pull-right">Add New Product</a>
-                    </div>
                     <div style="margin-left: 5%; float: left">
                         <a href="{{url('productList')}}" class="btn btn-success pull-left">Home</a>
+                    </div>
+                    <div style="margin-left: 5%; float: left">
+                        <a href="{{url('themeList')}}" class="btn btn-success pull-left">Theme List</a>
+                    </div>
+                    <div style="margin-left: 5%; float: left">
+                        <a href="{{url ('productAdd')}}" class="btn btn-success pull-right">Add New Product</a>
                     </div>
                     <br><br>
                     <table class="table table-striped table-bordered">

@@ -81,7 +81,7 @@
                                 <option value="" disabled selected>Select a Theme</option>
                                 @foreach($theme as $row)
                                 <option value="{{$row->themeID}}"> 
-                                    {{$row->themeID}} - {{$row->themeName}} 
+                                    {{$row->themeName}} 
                                 </option>
                                 @endforeach
                             </select>
@@ -89,7 +89,7 @@
                                 <div class="alert alert-danger" role ="alert">
                                     {{$message}}
                                 </div>
-                            @enderror-->
+                            @enderror
                         </div>
                         <br><br>
                         <button type="submit" class="btn btn-primary">Add</button>
