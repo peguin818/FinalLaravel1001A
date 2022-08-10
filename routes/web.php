@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\WebsiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,6 @@ use App\Http\Controllers\ThemeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('productList', [ProductController::class, 'index']);
 Route::get('themeList', [ThemeController::class, 'index']);
@@ -31,3 +28,5 @@ Route::get('themeEdit/{id}', [ThemeController::class, 'edit']);
 Route::post('themeUpdate', [ThemeController::class, 'update']);
 Route::get('productDelete/{id}', [ProductController::class, 'delete']);
 Route::get('themeDelete/{id}', [ThemeController::class, 'delete']);
+
+Route::get('/', [WebsiteController::class, 'index']);
