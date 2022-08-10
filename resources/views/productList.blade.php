@@ -35,6 +35,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Type</th>
                                 <th>Price</th>
                                 <th>Details</th>
                                 <th>Image 1</th>
@@ -48,6 +49,7 @@
                                 <tr>
                                     <td>{{$row->prdID}}</td>
                                     <td>{{$row->prdName}}</td>
+                                    <td>{{ $row->themeID }}</td>
                                     <td>{{$row->prdPrice}}</td>
                                     <td>{{$row->prdDetail}}</td>
                                     <td>
