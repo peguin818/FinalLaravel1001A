@@ -85,8 +85,6 @@
                                 </option>
                                 @endforeach
                             </select>
-                            
-                            <!--<input type="text" class="form-control" name="theme" value="{{old('name')}}">
                             @error('theme')
                                 <div class="alert alert-danger" role ="alert">
                                     {{$message}}
