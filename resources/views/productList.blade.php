@@ -53,15 +53,15 @@
                                     <td>{{$row->prdPrice}}</td>
                                     <td>{{$row->prdDetail}}</td>
                                     <td>
-                                        <img src="{{URL::asset('img/' . $row->prdImage1)}}" alt="" height="150" width="150">
+                                        <img src="{{URL::asset('img/' . $row->prdImage1)}}" alt="" height="169" width="300">
                                         <!--{{$row->prdImage1}}-->
                                     </td>
                                     <td>
-                                        <img src="{{URL::asset('img/' . $row->prdImage2)}}" alt="" height="150" width="150">
+                                        <img src="{{URL::asset('img/' . $row->prdImage2)}}" alt="" height="169" width="300">
                                         <!--{{$row->prdImage2}}-->
                                     </td>
                                     <td>
-                                        <img src="{{URL::asset('img/' . $row->prdImage3)}}" alt="" height="150" width="150">
+                                        <img src="{{URL::asset('img/' . $row->prdImage3)}}" alt="" height="169" width="300">
                                         <!--{{$row->prdImage3}}-->
                                     </td>
                                     <td>
