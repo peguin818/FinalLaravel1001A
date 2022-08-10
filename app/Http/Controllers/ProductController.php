@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Theme;
 use Illuminate\Support\Facades\Redis;
 
 class ProductController extends Controller
@@ -14,7 +15,8 @@ class ProductController extends Controller
     }
 
     public function add() {
-        return view('productAdd');
+        $theme = Theme::get();
+        return view('productAdd', compact('theme'));
     }
 
     public function save(Request $request) {

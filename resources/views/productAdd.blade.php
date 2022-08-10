@@ -77,12 +77,21 @@
                         </div>
                         <div class="md-3">
                             <label for="theme" class="form-label">Theme: </label>
-                            <input type="text" class="form-control" name="theme" value="{{old('name')}}">
+                            <select class="form-control" name="theme" id="theme" require>
+                                <option value="" disabled selected>Select a Theme</option>
+                                @foreach($theme as $row)
+                                <option value="{{$row->themeID}}"> 
+                                    {{$row->themeID}} - {{$row->themeName}} 
+                                </option>
+                                @endforeach
+                            </select>
+                            
+                            <!--<input type="text" class="form-control" name="theme" value="{{old('name')}}">
                             @error('theme')
                                 <div class="alert alert-danger" role ="alert">
                                     {{$message}}
                                 </div>
-                            @enderror
+                            @enderror-->
                         </div>
                         <br><br>
                         <button type="submit" class="btn btn-primary">Add</button>
