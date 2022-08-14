@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,9 @@ Route::get('featured', [WebsiteController::class, 'featured']);
 Route::get('products', [WebsiteController::class, 'products']);
 Route::get('contact', [WebsiteController::class, 'contact']);
 Route::get('about', [WebsiteController::class, 'about']);
+Route::get('signin', [UserController::class, 'signin']);
+Route::get('signup', [UserController::class, 'signup']);
+Route::post('userSignup', [UserController::class, 'userSignup']);
 
 Route::get('admin/', [WebsiteController::class, 'adminIndex']);
 Route::get('admin/productList', [WebsiteController::class, 'productList']);
