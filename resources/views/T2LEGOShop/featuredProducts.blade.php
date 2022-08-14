@@ -41,10 +41,10 @@
       
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="/">
-            <img src="/web-img/logo.png" alt="">
+          <a class="" href="/">
+            <img src="/web-img/logo.png" alt="" height="80" width="80">
             <span>
-              Medion
+              T2LEGOShop
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -59,10 +59,13 @@
                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url('') }}"> About </a>
+                  <a class="nav-link" href="{{ url('about') }}"> About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../T2LEGOShop/index.blade.php">Contact us</a>
+                  <a class="nav-link" href="{{ url('contact') }}">Contact us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url('featured') }}">Featured Products</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ url('products') }}"> Shop now </a>

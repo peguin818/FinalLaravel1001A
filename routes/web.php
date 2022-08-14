@@ -31,3 +31,6 @@ Route::get('themeDelete/{id}', [ThemeController::class, 'delete']);
 
 Route::get('/', [WebsiteController::class, 'index']);
 Route::get('featured', [WebsiteController::class, 'featured']);
+Route::get('products', [WebsiteController::class, 'products']);
+Route::get('contact', [WebsiteController::class, 'contact']);
+Route::get('about', [WebsiteController::class, 'about']);

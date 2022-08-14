@@ -59,10 +59,10 @@
                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url('') }}"> About </a>
+                  <a class="nav-link" href="{{ url('about') }}"> About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../T2LEGOShop/index.blade.php">Contact us</a>
+                  <a class="nav-link" href="{{ url('contact') }}">Contact us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ url('products') }}"> Shop now </a>
@@ -100,25 +100,21 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="img-box">
-                    <img src="web-img/medicine.png" alt="">
+                    <img src="web-img/76192.jpg" width="700px" alt="">
                   </div>
                 </div>
                 <div class="col-md-8">
                   <div class="detail-box">
                     <h1>
-                      Welcome To Our <br>
-                      <span>
-                        Online Medicine
-                      </span>
+                      INFINITY SAGA <br>
+                      <br>
+                      76192 Avengers Endgame: Final Battle
 
                     </h1>
-                    <p>
-                      There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised words which don't look even slightly
-                      believable.
-                    </p>
+                    <br>
+                    <br>
                     <div>
-                      <a href="">
+                      <a href="{{ url('products') }}">
                         Buy Now
                       </a>
                     </div>
@@ -132,25 +128,21 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="img-box">
-                    <img src="web-img/medicine.png" alt="">
+                    <img src="web-img/76218.jpg" alt="">
                   </div>
                 </div>
                 <div class="col-md-8">
                   <div class="detail-box">
                     <h1>
-                      Welcome To Our <br>
-                      <span>
-                        Online Medicine
-                      </span>
+                      INFINITY SAGA <br>
+                      <br>
+                      76218 Sanctum Sanctorum
 
                     </h1>
-                    <p>
-                      There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised words which don't look even slightly
-                      believable.
-                    </p>
+                    <br>
+                    <br>
                     <div>
-                      <a href="">
+                      <a href="{{ url('products') }}">
                         Buy Now
                       </a>
                     </div>
@@ -162,10 +154,10 @@
         </div>
 
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="sr-only">Previous</span>
+          <span class=""><</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
+          <span class="">></span>
         </a>
       </div>
 
@@ -237,7 +229,7 @@
               Fast Delivery
             </h5>
             <p>
-              It is a long established fact that a reader will be distracted by
+              Products can be delivered under THREE working days!
             </p>
           </div>
         </div>
@@ -267,10 +259,10 @@
           </div>
           <div class="detail-box">
             <h5>
-              license of government
+              license of the LEGO Company
             </h5>
             <p>
-              It is a long established fact that a reader will be distracted by
+              We are the official retail partner of the LEGO Company!
             </p>
           </div>
         </div>
@@ -359,10 +351,10 @@
           </div>
           <div class="detail-box">
             <h5>
-              support24/7
+              support 24/7
             </h5>
             <p>
-              It is a long established fact that a reader will be distracted by
+              Our customer support staffs work 24/7!
             </p>
           </div>
         </div>
@@ -380,19 +372,18 @@
         <div class="col-lg-3 col-md-5 offset-md-2">
           <div class="detail-box">
             <h2>
-              You get <br>
-              any medicine <br>
-              on
+              All LEGO Products <br>
+              on SALE <br>
               <span>
-                10% discount
+                20% discount
               </span>
 
             </h2>
             <p>
-              It is a long established fact that a reader will be distracted by
+              This sale program is permanent!
             </p>
             <div>
-              <a href="">
+              <a href="{{ url('products') }}">
                 Buy Now
               </a>
             </div>
@@ -400,7 +391,7 @@
         </div>
         <div class="col-lg-7 col-md-5">
           <div class="img-box">
-            <img src="web-img/medicines.jpg" alt="">
+            <img src="web-img/sale.jpg" alt="">
           </div>
         </div>
       </div>
@@ -415,39 +406,30 @@
   <section class="health_section layout_padding">
     <div class="health_carousel-container">
       <h2 class="text-uppercase">
-        Medicine & Health
-
+        LEGO Products
       </h2>
       <div class="carousel-wrap layout_padding2">
         <div class="owl-carousel">
           <div class="item">
             <div class="box">
               <div class="btn_container">
-                <a href="">
+                <a href="{{ url('products') }}">
                   Buy Now
                 </a>
               </div>
               <div class="img-box">
-                <img src="/web-img/p-1.jpg" alt="">
+                <img src="/img/75337-AT.TEWalker-01.jpg" alt="">
               </div>
               <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
                 <div class="text">
                   <h6>
-                    Health
+                    AT-TE Walker
                   </h6>
                   <h6 class="price">
                     <span>
                       $
                     </span>
-                    30
+                    119
                   </h6>
                 </div>
               </div>
@@ -456,42 +438,83 @@
           <div class="item">
             <div class="box">
               <div class="btn_container">
-                <a href="">
+                <a href="{{ url('products') }}">
                   Buy Now
                 </a>
               </div>
               <div class="img-box">
-                <img src="/web-img/p-5.jpg" alt="">
+                <img src="/img/42083-BugattiChiron-01.jpg" alt="">
               </div>
               <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
                 <div class="text">
                   <h6>
-                    Health
+                    Bugatti Chiron
                   </h6>
                   <h6 class="price">
                     <span>
                       $
                     </span>
-                    30
+                    499
                   </h6>
                 </div>
               </div>
             </div>
           </div>
-
+          <div class="item">
+            <div class="box">
+              <div class="btn_container">
+                <a href="{{ url('products') }}">
+                  Buy Now
+                </a>
+              </div>
+              <div class="img-box">
+                <img src="/img/76038-AvengersTower-01.jpg" height="250px" alt="">
+              </div>
+              <div class="detail-box">
+                <div class="text">
+                  <h6>
+                    Avengers Tower
+                  </h6>
+                  <h6 class="price">
+                    <span>
+                      $
+                    </span>
+                    159
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="btn_container">
+                <a href="{{ url('products') }}">
+                  Buy Now
+                </a>
+              </div>
+              <div class="img-box">
+                <img src="/img/75252-ImperialStarDestroyer-01.jpg" alt="">
+              </div>
+              <div class="detail-box">
+                <div class="text">
+                  <h6>
+                    Imperial Star Destroyer
+                  </h6>
+                  <h6 class="price">
+                    <span>
+                      $
+                    </span>
+                    799
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="d-flex justify-content-center">
-      <a href="">
+      <a href="{{ url('products') }}">
         See more
       </a>
     </div>
@@ -509,16 +532,14 @@
       </div>
 
       <div class="img-box">
-        <img src="/web-img/about-medicine.png" alt="">
+        <img src="/web-img/logo.png" height="350px" alt="">
       </div>
       <div class="detail-box">
         <p>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking
-          at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-          opposed to using 'Content here, content here', making it
+          We only sell authentic products, guaranteed by the LEGO Company
         </p>
         <div class="d-flex justify-content-center">
-          <a href="">
+          <a href="{{ url('about') }}">
             Read More
           </a>
         </div>
@@ -529,7 +550,7 @@
   <!-- end about section -->
 
   <!-- client section -->
-  <section class="client_section layout_padding">
+  <!--<section class="client_section layout_padding">
     <div class="container">
       <div class="custom_heading-container ">
         <h2>
@@ -629,7 +650,7 @@
 
 
     </div>
-  </section>
+  </section>-->
   <!-- end client section -->
 
   <!-- contact section -->
@@ -661,31 +682,12 @@
                 <label for="exampleInputEmail1">Email </label>
                 <input type="email" class="form-control" id="exampleInputEmail1">
               </div>
-              <div class="form-group ">
-                <label for="inputState">Select medicine</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Medicine 1</option>
-                  <option selected>Medicine 2</option>
-                  <option selected>Medicine 3</option>
-                </select>
-              </div>
               <div class="form-group">
                 <label for="exampleInputMessage">Message</label>
                 <input type="text" class="form-control" id="exampleInputMessage">
               </div>
               <button type="submit" class="">Send</button>
             </form>
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div class="detail-box">
-            <h3>
-              Get Now Medicines
-            </h3>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable.
-            </p>
           </div>
         </div>
       </div>
@@ -709,7 +711,7 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  +01 123567894
+                  +84 945493370
                 </h6>
               </div>
             </div>
@@ -719,7 +721,7 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  demo@gmail
+                  quanltgcs210517@fpt.edu.vn
                 </h6>
               </div>
             </div>
@@ -732,16 +734,13 @@
             </h4>
             <ul class="navbar-nav  ">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> About </a>
+                <a class="nav-link" href="{{ url('about') }}"> About </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="medicine.html"> Medicine </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buy.html"> Online Buy </a>
+                <a class="nav-link" href="{{ url('products') }}"> Shop now </a>
               </li>
             </ul>
           </div>
@@ -774,6 +773,7 @@
       &copy; 2019 All Rights Reserved. Design by
       <a href="https://html.design/">Free Html Templates</a>
     </p>
+    <p>Edited by PhongPNGGCC200002 & QuanLTGCS210517</p>
   </section>
   <!-- footer section -->
 

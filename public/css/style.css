@@ -405,11 +405,11 @@ a:focus {
 }
 
 .feature_section .feature_container .box:hover .img-box {
-  border: 1px solid #10e7f4;
+  border: 1px solid #fffb00;
 }
 
 .feature_section .feature_container .box:hover .img-box svg {
-  fill: #10e7f4;
+  fill: #fffb00;
 }
 
 .discount_section {
@@ -438,7 +438,7 @@ a:focus {
 }
 
 .discount_section .detail-box h2 span {
-  color: #10e7f4;
+  color: #fffb00;
 }
 
 .discount_section .detail-box p {
@@ -448,15 +448,15 @@ a:focus {
 .discount_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #10e7f4;
-  border: 1px solid #10e7f4;
+  background-color: #fffb00;
+  border: 1px solid #fffb00;
   color: #ffffff;
   margin-top: 35px;
 }
 
 .discount_section .detail-box a:hover {
   background-color: transparent;
-  color: #10e7f4;
+  color: #fffb00;
 }
 
 .discount_section .img-box img {

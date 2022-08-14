@@ -1,69 +1,50 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Medion</title>
-
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
-
-  <!-- font awesome style -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto:400,700&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-</head>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+  
+    <title>T2 LEGO Shop</title>
+  
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  
+    <!-- font awesome style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+  
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto:400,700&display=swap" rel="stylesheet">
+  
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="/css/responsive.css" rel="stylesheet" />
+  </head>
 
 <body class="sub_page">
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
-      <div class="container">
-        <div class="top_contact-container">
-          <div class="tel_container">
-            <a href="">
-              <img src="images/telephone-symbol-button.png" alt=""> Call : +01 1234567890
-            </a>
-          </div>
-          <div class="social-container">
-            <a href="">
-              <img src="images/fb.png" alt="" class="s-1">
-            </a>
-            <a href="">
-              <img src="images/twitter.png" alt="" class="s-2">
-            </a>
-            <a href="">
-              <img src="images/instagram.png" alt="" class="s-3">
-            </a>
-          </div>
-        </div>
-      </div>
+      
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="">
+          <a class="" href="/">
+            <img src="/web-img/logo.png" alt="" height="80" width="80">
             <span>
-              Medion
+              T2LEGOShop
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -75,22 +56,16 @@
             <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About </a>
+                  <a class="nav-link" href="{{ url('about') }}"> About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="medicine.html"> Medicine </a>
+                  <a class="nav-link" href="{{ url('contact') }}">Contact us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="buy.html"> Online Buy </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="news.html"> News </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" href="{{ url('products') }}"> Shop now </a>
                 </li>
               </ul>
               <form class="form-inline ">
@@ -99,7 +74,7 @@
               </form>
               <div class="login_btn-contanier ml-0 ml-lg-5">
                 <a href="">
-                  <img src="images/user.png" alt="">
+                  <img src="web-img/user.png" alt="">
                   <span>
                     Login
                   </span>
@@ -107,7 +82,6 @@
               </div>
             </div>
           </div>
-
         </nav>
       </div>
     </header>
@@ -117,7 +91,7 @@
 
 
   <!-- contact section -->
-  <section class="contact_section layout_padding">
+  <section class="contact_section">
     <div class="container">
       <div class="row">
         <div class="custom_heading-container ">
@@ -145,31 +119,12 @@
                 <label for="exampleInputEmail1">Email </label>
                 <input type="email" class="form-control" id="exampleInputEmail1">
               </div>
-              <div class="form-group ">
-                <label for="inputState">Select medicine</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Medicine 1</option>
-                  <option selected>Medicine 2</option>
-                  <option selected>Medicine 3</option>
-                </select>
-              </div>
               <div class="form-group">
                 <label for="exampleInputMessage">Message</label>
                 <input type="text" class="form-control" id="exampleInputMessage">
               </div>
               <button type="submit" class="">Send</button>
             </form>
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div class="detail-box">
-            <h3>
-              Get Now Medicines
-            </h3>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable.
-            </p>
           </div>
         </div>
       </div>
@@ -189,21 +144,21 @@
             </h4>
             <div class="box">
               <div class="img-box">
-                <img src="images/telephone-symbol-button.png" alt="">
+                <img src="/web-img/telephone-symbol-button.png" alt="">
               </div>
               <div class="detail-box">
                 <h6>
-                  +01 123567894
+                  +84 945493370
                 </h6>
               </div>
             </div>
             <div class="box">
               <div class="img-box">
-                <img src="images/email.png" alt="">
+                <img src="/web-img/email.png" alt="">
               </div>
               <div class="detail-box">
                 <h6>
-                  demo@gmail
+                  quanltgcs210517@fpt.edu.vn
                 </h6>
               </div>
             </div>
@@ -216,16 +171,13 @@
             </h4>
             <ul class="navbar-nav  ">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> About </a>
+                <a class="nav-link" href="{{ url('about') }}"> About </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="medicine.html"> Medicine </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buy.html"> Online Buy </a>
+                <a class="nav-link" href="{{ url('products') }}"> Shop now </a>
               </li>
             </ul>
           </div>
@@ -237,7 +189,7 @@
             </h4>
             <form action="">
               <input type="text" placeholder="Enter Your email">
-              <div class="d-flex justify-content-center justify-content-md-end mt-3">
+              <div class="d-flex justify-content-center justify-content-end mt-3">
                 <button>
                   Subscribe
                 </button>
@@ -258,6 +210,7 @@
       &copy; 2019 All Rights Reserved. Design by
       <a href="https://html.design/">Free Html Templates</a>
     </p>
+    <p>Edited by PhongPNGGCC200002 & QuanLTGCS210517</p>
   </section>
   <!-- footer section -->
 

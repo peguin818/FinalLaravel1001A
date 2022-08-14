@@ -89,25 +89,127 @@
   </div>
 
 
-  <!-- about section -->
-  <section class="about_section layout_padding">
-    <div class="container">
-      <div class="custom_heading-container ">
-        <h2>
-          About Us
-        </h2>
+
+
+
+  <!-- health section -->
+
+  <section class="health_section layout_padding">
+    <div class="health_carousel-container">
+      <h2 class="text-uppercase">
+        LEGO Marvel
+      </h2>
+      <div class="carousel-wrap layout_padding2">
+        <div class="owl-carousel">
+          @foreach ($dataMarvel as $row)
+          <div class="item">
+            <div class="box">
+              <div class="btn_container">
+                <a href="">
+                  Buy Now
+                </a>
+              </div>
+              <div class="img-box">
+                <img src="{{URL::asset('img/' . $row->prdImage1)}}" height="250" alt="">
+              </div>
+                <div class="text">
+                  <h6>
+                    {{ $row->prdName }}
+                  </h6>
+                  <h6 class="price">
+                    <span>
+                      $
+                    </span>
+                    {{ $row->prdPrice }}
+                  </h6>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+    </div>
+    <div class="health_carousel-container">
+      <h2 class="text-uppercase">
+        LEGO Technic
+
+
+      </h2>
+      <div class="carousel-wrap layout_padding2">
+        <div class="owl-carousel owl-2">
+          @foreach ($dataTechnic as $row)
+          <div class="item">
+            <div class="box">
+              <div class="btn_container">
+                <a href="">
+                  Buy Now
+                </a>
+              </div>
+              <div class="img-box">
+                <img src="{{URL::asset('img/' . $row->prdImage1)}}" height="250" alt="">
+              </div>
+                <div class="text">
+                  <h6>
+                    {{ $row->prdName }}
+                  </h6>
+                  <h6 class="price">
+                    <span>
+                      $
+                    </span>
+                    {{ $row->prdPrice }}
+                  </h6>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div>
       </div>
 
-      <div class="img-box">
-        <img src="images/about-medicine.png" alt="">
-      </div>
-      <div class="detail-box">
-        <p>
-          We only sell authentic products, guaranteed by the LEGO Company
-        </p>
-      </div>
-    </div>
+      <div class="health_carousel-container">
+        <h2 class="text-uppercase">
+          LEGO Star Wars
+  
+  
+        </h2>
+        <div class="carousel-wrap layout_padding2">
+          <div class="owl-carousel owl-2">
+            @foreach ($dataStarwars as $row)
+            <div class="item">
+              <div class="box">
+                <div class="btn_container">
+                  <a href="">
+                    Buy Now
+                  </a>
+                </div>
+                <div class="img-box">
+                  <img src="{{URL::asset('img/' . $row->prdImage1)}}" height="250" alt="">
+                </div>
+                  <div class="text">
+                    <h6>
+                      {{ $row->prdName }}
+                    </h6>
+                    <h6 class="price">
+                      <span>
+                        $
+                      </span>
+                      {{ $row->prdPrice }}
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+            </div>
+          </div>
+        </div>
+    <!--<div class="d-flex justify-content-center">
+      <a href="">
+        See more
+      </a>
+    </div>-->
   </section>
+
+  <!-- end health section -->
 
 
 
