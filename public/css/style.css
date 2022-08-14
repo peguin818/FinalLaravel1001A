@@ -232,7 +232,7 @@ a:focus {
 }
 
 .custom_nav-container .form-inline button {
-  background-color: #ffffff;
+  background-color: #fffb00;
 }
 
 .custom_nav-container .navbar-toggler {
@@ -280,7 +280,7 @@ a:focus {
   padding: 10px 45px;
   background-color: #2c2c2c;
   border: 1px solid #2c2c2c;
-  color: #ffffff;
+  color: #fffb00;
   margin-top: 35px;
   margin-bottom: 45px;
 }
@@ -313,7 +313,7 @@ a:focus {
 
 .slider_section .carousel-control-prev:hover,
 .slider_section .carousel-control-next:hover {
-  background-color: #ffffff;
+  background-color: #fffb00;
   width: 55px;
   height: 55px;
   -webkit-transform: translateY(-50%) translatex(-5px);

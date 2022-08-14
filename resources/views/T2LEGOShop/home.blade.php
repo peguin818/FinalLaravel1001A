@@ -69,8 +69,8 @@
                 </li>
               </ul>
               <form class="form-inline ">
-                <input type="search" placeholder="Search">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                <input type="" placeholder="Search">
+                <button class="" type="submit">Search</button>
               </form>
               <div class="login_btn-contanier ml-0 ml-lg-5">
                 <a href="">
