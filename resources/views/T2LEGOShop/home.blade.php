@@ -406,7 +406,7 @@
   <section class="health_section layout_padding">
     <div class="health_carousel-container">
       <h2 class="text-uppercase">
-        LEGO Products
+        Featured LEGO Products
       </h2>
       <div class="carousel-wrap layout_padding2">
         <div class="owl-carousel">
