@@ -41,10 +41,10 @@
       
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="/">
-            <img src="/web-img/logo.png" alt="">
+          <a class="" href="/">
+            <img src="/web-img/logo.png" alt="" height="80" width="80">
             <span>
-              Medion
+              T2LEGOShop
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -59,19 +59,13 @@
                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../T2LEGOShop/index.blade.php"> About </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../T2LEGOShop/index.blade.php"> Medicine </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../T2LEGOShop/index.blade.php"> Online Buy </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../T2LEGOShop/index.blade.php"> News </a>
+                  <a class="nav-link" href="{{ url('') }}"> About </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="../T2LEGOShop/index.blade.php">Contact us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url('products') }}"> Shop now </a>
                 </li>
               </ul>
               <form class="form-inline ">
@@ -458,6 +452,8 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="item">
             <div class="box">
               <div class="btn_container">
                 <a href="">
@@ -490,18 +486,7 @@
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="/web-img/p-2.jpg" alt="">
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>

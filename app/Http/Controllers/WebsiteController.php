@@ -10,4 +10,8 @@ class WebsiteController extends Controller
     public function index() {
         return view('T2LEGOShop.home');
     }
+
+    public function featured() {
+        return view('T2LEGOShop.featuredProducts');
+    }
 }

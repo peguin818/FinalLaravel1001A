@@ -30,3 +30,4 @@ Route::get('productDelete/{id}', [ProductController::class, 'delete']);
 Route::get('themeDelete/{id}', [ThemeController::class, 'delete']);
 
 Route::get('/', [WebsiteController::class, 'index']);
+Route::get('featured', [WebsiteController::class, 'featured']);
