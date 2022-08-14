@@ -168,85 +168,65 @@
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Table Without Border</h6>
-                            <table class="table table-borderless">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First Name</th>
-                                        <th scope="col">Last Name</th>
-                                        <th scope="col">Email</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>John</td>
-                                        <td>Doe</td>
-                                        <td>jhon@email.com</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mark@email.com</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>jacob@email.com</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Responsive Table</h6>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
+                    <div class="contrainer" style="margin: top 20px;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center">Products List</h1>
+                                @if(Session::has('success'))
+                                    <div class="alert alert-danger" role ="alert">
+                                        {{Session::get('success')}}
+                                    </div>
+                                @endif
+                                <div style="margin-left: 5%; float: left">
+                                    <a href="{{url('productList')}}" class="btn btn-success pull-left">Home</a>
+                                </div>
+                                <div style="margin-left: 5%; float: left">
+                                    <a href="{{url('themeList')}}" class="btn btn-success pull-left">Theme List</a>
+                                </div>
+                                <div style="margin-left: 5%; float: left">
+                                    <a href="{{url ('productAdd')}}" class="btn btn-success pull-right">Add New Product</a>
+                                </div>
+                                <br><br>
+                                <table class="table table-striped table-bordered">
+                                    <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First Name</th>
-                                            <th scope="col">Last Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Country</th>
-                                            <th scope="col">ZIP</th>
-                                            <th scope="col">Status</th>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Price</th>
+                                            <th>Details</th>
+                                            <th>Image 1</th>
+                                            <th>Image 2</th>
+                                            <th>Image 3</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>jhon@email.com</td>
-                                            <td>USA</td>
-                                            <td>123</td>
-                                            <td>Member</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>mark@email.com</td>
-                                            <td>UK</td>
-                                            <td>456</td>
-                                            <td>Member</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>jacob@email.com</td>
-                                            <td>AU</td>
-                                            <td>789</td>
-                                            <td>Member</td>
-                                        </tr>
+                                        @foreach($data as $row)
+                                            <tr>
+                                                <td>{{$row->prdID}}</td>
+                                                <td>{{$row->prdName}}</td>
+                                                <td>{{ $row->themeID }}</td>
+                                                <td>{{$row->prdPrice}}</td>
+                                                <td>{{$row->prdDetail}}</td>
+                                                <td>
+                                                    <img src="{{URL::asset('img/' . $row->prdImage1)}}" alt="" height="169" width="300">
+                                                    <!--{{$row->prdImage1}}-->
+                                                </td>
+                                                <td>
+                                                    <img src="{{URL::asset('img/' . $row->prdImage2)}}" alt="" height="169" width="300">
+                                                    <!--{{$row->prdImage2}}-->
+                                                </td>
+                                                <td>
+                                                    <img src="{{URL::asset('img/' . $row->prdImage3)}}" alt="" height="169" width="300">
+                                                    <!--{{$row->prdImage3}}-->
+                                                </td>
+                                                <td>
+                                                    <a href="{{url('productEdit/' . $row->prdID)}}" class="btn btn-primary">Edit</a>
+                                                    <a href="{{url('productDelete/' . $row->prdID)}}" class="btn btn-danger" onclick="return confirm('You are about to delete a Product');">Delete</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -36,6 +36,11 @@ class WebsiteController extends Controller
     }
 
     public function productList() {
-        return view('T2LEGOShop/Admin.productList');
+        $data = DB::table('products')
+        ->join('themes', 'themes.themeID', 'products.themeID')
+        ->select('products.*', 'themes.themeName')
+        ->get();
+
+        return view('T2LEGOShop/Admin.productList', compact('data'));
     }
 }
