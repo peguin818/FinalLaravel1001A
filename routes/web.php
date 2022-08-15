@@ -6,6 +6,7 @@ use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,31 +43,35 @@ Route::get('signup', [UserController::class, 'signup']);
 Route::post('userSignup', [UserController::class, 'userSignup']);
 Route::get('signout', [UserController::class, 'userSignout']);
 
-Route::get('admin/', [WebsiteController::class, 'adminIndex']);
-Route::get('admin/productList', [ProductController::class, 'index']);
-Route::get('admin/productAdd', [ProductController::class, 'add']);
-Route::post('admin/productSave', [ProductController::class, 'save']);
-Route::get('admin/productEdit/{id}', [ProductController::class, 'edit']);
-Route::post('admin/productUpdate', [ProductController::class, 'update']);
-Route::get('admin/productDelete/{id}', [ProductController::class, 'delete']);
+Route::get('admin', [AdminController::class, 'index'])->middleware('isLoggedIn');
+Route::get('admin/signin', [AdminController::class, 'signin'])->middleware('alreadyLoggedIn');
+Route::post('adminSignin', [AdminController::class, 'adminSignin']);
+Route::get('adminSignout', [AdminController::class, 'adminSignout']);
 
-Route::get('admin/themeList', [ThemeController::class, 'index']);
-Route::get('admin/themeAdd', [ThemeController::class, 'add']);
-Route::post('admin/themeSave', [ThemeController::class, 'save']);
-Route::get('admin/themeEdit/{id}', [ThemeController::class, 'edit']);
-Route::post('admin/themeUpdate', [ThemeController::class, 'update']);
-Route::get('admin/themeDelete/{id}', [ThemeController::class, 'delete']);
+Route::get('admin/productList', [ProductController::class, 'index'])->middleware('isLoggedIn');
+Route::get('admin/productAdd', [ProductController::class, 'add'])->middleware('isLoggedIn');
+Route::post('admin/productSave', [ProductController::class, 'save'])->middleware('isLoggedIn');
+Route::get('admin/productEdit/{id}', [ProductController::class, 'edit'])->middleware('isLoggedIn');
+Route::post('admin/productUpdate', [ProductController::class, 'update'])->middleware('isLoggedIn');
+Route::get('admin/productDelete/{id}', [ProductController::class, 'delete'])->middleware('isLoggedIn');
 
-Route::get('admin/userList', [UserController::class, 'index']);
-Route::get('admin/userAdd', [UserController::class, 'add']);
-Route::post('admin/userSave', [UserController::class, 'save']);
-Route::get('admin/userEdit/{id}', [UserController::class, 'edit']);
-Route::post('admin/userUpdate', [UserController::class, 'update']);
-Route::get('admin/userDelete/{id}', [UserController::class, 'delete']);
+Route::get('admin/themeList', [ThemeController::class, 'index'])->middleware('isLoggedIn');
+Route::get('admin/themeAdd', [ThemeController::class, 'add'])->middleware('isLoggedIn');
+Route::post('admin/themeSave', [ThemeController::class, 'save'])->middleware('isLoggedIn');
+Route::get('admin/themeEdit/{id}', [ThemeController::class, 'edit'])->middleware('isLoggedIn');
+Route::post('admin/themeUpdate', [ThemeController::class, 'update'])->middleware('isLoggedIn');
+Route::get('admin/themeDelete/{id}', [ThemeController::class, 'delete'])->middleware('isLoggedIn');
 
-Route::get('admin/adminList', [AdminController::class, 'index']);
-Route::get('admin/adminAdd', [AdminController::class, 'add']);
-Route::post('admin/adminSave', [AdminController::class, 'save']);
-Route::get('admin/adminEdit/{id}', [AdminController::class, 'edit']);
-Route::post('admin/adminUpdate', [AdminController::class, 'update']);
-Route::get('admin/adminDelete/{id}', [AdminController::class, 'delete']);
+Route::get('admin/userList', [UserController::class, 'index'])->middleware('isLoggedIn');
+Route::get('admin/userAdd', [UserController::class, 'add'])->middleware('isLoggedIn');
+Route::post('admin/userSave', [UserController::class, 'save'])->middleware('isLoggedIn');
+Route::get('admin/userEdit/{id}', [UserController::class, 'edit'])->middleware('isLoggedIn');
+Route::post('admin/userUpdate', [UserController::class, 'update'])->middleware('isLoggedIn');
+Route::get('admin/userDelete/{id}', [UserController::class, 'delete'])->middleware('isLoggedIn');
+
+Route::get('admin/adminList', [AdminController::class, 'adminList'])->middleware('isLoggedIn');
+Route::get('admin/adminAdd', [AdminController::class, 'add'])->middleware('isLoggedIn');
+Route::post('admin/adminSave', [AdminController::class, 'save'])->middleware('isLoggedIn');
+Route::get('admin/adminEdit/{id}', [AdminController::class, 'edit'])->middleware('isLoggedIn');
+Route::post('admin/adminUpdate', [AdminController::class, 'update'])->middleware('isLoggedIn');
+Route::get('admin/adminDelete/{id}', [AdminController::class, 'delete'])->middleware('isLoggedIn');

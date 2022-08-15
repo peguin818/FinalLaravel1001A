@@ -9,7 +9,46 @@ use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
-    public function index() {
+    public function signin() {
+        return view('T2LEGOShop.Admin.adminSignin');
+    }
+
+    public function adminSignin(Request $request){
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        $admin = Admin::where('admUsername', '=', $request->username)->first();
+
+        if($admin){
+            if(Hash::check($request->password, $admin->admPassword)){
+                $request->session()->put('loginID', $admin->admUsername);
+                return redirect('admin/');
+            } else {
+                return back()->with('fail', 'Password is not correct');
+            }
+        } else {
+            return back()->with('fail', 'Username not found');
+        }
+    }
+
+    public function adminSignout() {
+        if(Session::has('loginID')) {
+            Session::pull('loginID');
+            return redirect('admin/signin');
+        }
+    }
+
+    public function index(Request $request) {
+        $data = array();
+        if(Session::has('loginID')) {
+            $data = Admin::where('admUsername', '=', Session::get('loginID'))->first();
+        }
+        return view('T2LEGOShop/Admin.index', compact('data'));
+    }
+
+    public function adminList() {
         $data = Admin::get();
         return view('T2LEGOShop.Admin.adminList', compact('data'));
     }

@@ -31,10 +31,6 @@ class WebsiteController extends Controller
     public function about() {
         return view('T2LEGOShop.about');
     }
-
-    public function adminIndex() {
-        return view('T2LEGOShop/Admin.index');
-    }
     
     public function themeList()
     {
