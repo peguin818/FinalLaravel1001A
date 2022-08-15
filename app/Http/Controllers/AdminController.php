@@ -52,11 +52,11 @@ class AdminController extends Controller
         
         $id = $request->id;
         Admin::where('admID', '=', $id)->update([
-            'usrUsername' => $request->username,    
-            'usrPassword' => Hash::make($request->password),
-            'usrFirstName' => $request->firstName,
-            'usrLastName' => $request->lastName,
-            'usrTel' => $request->telephone,
+            'admUsername' => $request->username,    
+            'admPassword' => Hash::make($request->password),
+            'admFirstName' => $request->firstName,
+            'admLastName' => $request->lastName,
+            'admTel' => $request->telephone,
         ]);
 
         return redirect()->back()->with('success', 'Admin update successfully');

@@ -178,12 +178,6 @@
                                     </div>
                                 @endif    
                                 <form action="{{ url('admin/adminSave') }}" method="post">
-                                    @if (Session::has('success'))
-                                        <div class="alert alert-success">{{ Session::get('success') }}</div>
-                                    @endif
-                                    @if (Session::has('fail'))
-                                        <div class="alert alert-danger">{{ Session::get('fail') }}</div>
-                                    @endif
                                     @csrf
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" name="username" id="username" placeholder="peguin818" value="{{ old('username') }}" >

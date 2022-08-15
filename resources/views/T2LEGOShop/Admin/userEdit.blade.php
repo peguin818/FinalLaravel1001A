@@ -177,7 +177,7 @@
                                         {{Session::get('success')}}
                                     </div>
                                 @endif    
-                                <form action="{{ url('admin/userSave') }}" method="post">
+                                <form action="{{ url('admin/userUpdate') }}" method="post">
                                     @csrf
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" name="id" id="id" value="{{ $data->usrID }}" readonly >
