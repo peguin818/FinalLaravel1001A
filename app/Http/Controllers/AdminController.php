@@ -3,83 +3,67 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Admins;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function index() {
+        $data = Admin::get();
+        return view('T2LEGOShop.Admin.adminList', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function add() {
+        return view('T2LEGOShop.Admin.adminAdd');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function save(Request $request) {
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'telephone' => 'required',
+        ]);
+
+        $admin = new Admin();
+        $admin->admUsername = $request->username;
+        $admin->admPassword = Hash::make($request->password);
+        $admin->admFirstName = $request->firstName;
+        $admin->admLastName = $request->lastName;
+        $admin->admTel = $request->telephone;
+        
+        $result = $admin->save();
+
+        if ($result) {
+            return back()->with('success', 'Admin add successfully');
+        } else {
+            return back()->with('fail', 'Admin add unsuccessfully');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function edit($id) {
+        $data = Admin::where('admID', '=', $id)->first();
+        return view('T2LEGOShop.Admin.adminEdit', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function update(Request $request) {
+        
+        $id = $request->id;
+        Admin::where('admID', '=', $id)->update([
+            'usrUsername' => $request->username,    
+            'usrPassword' => Hash::make($request->password),
+            'usrFirstName' => $request->firstName,
+            'usrLastName' => $request->lastName,
+            'usrTel' => $request->telephone,
+        ]);
+
+        return redirect()->back()->with('success', 'Admin update successfully');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function delete($id) {
+        Admin::where('admID', '=', $id)->delete();
+        return redirect()->back()->with('success', 'Admin delete successfully');
     }
 }

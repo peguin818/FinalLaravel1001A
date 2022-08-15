@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>T2LEGOShop - User Add</title>
+    <title>T2LEGOShop - User Edit</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -171,7 +171,7 @@
                     <div class="contrainer" style="margin: top 20px;">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1>Add new user</h1>
+                                <h1>Edit user</h1>
                                 @if(Session::has('success'))
                                     <div class="alert alert-success" role ="alert">
                                         {{Session::get('success')}}
@@ -180,7 +180,16 @@
                                 <form action="{{ url('admin/userSave') }}" method="post">
                                     @csrf
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" name="username" id="username" placeholder="peguin818" value="{{ old('username') }}" >
+                                        <input type="text" class="form-control" name="id" id="id" value="{{ $data->usrID }}" readonly >
+                                        <label for="username">ID</label>
+                                        <span class="text-danger">
+                                            @error('id')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="peguin818" value="{{ $data->usrUsername }}" >
                                         <label for="username">Username</label>
                                         <span class="text-danger">
                                             @error('username')
@@ -189,7 +198,7 @@
                                         </span>
                                     </div>
                                     <div class="form-floating mb-4">
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="{{ old('password') }}">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="{{ $data->usrPassword }}">
                                         <label for="password">Password</label>
                                         <span class="text-danger">
                                             @error('password')
@@ -198,7 +207,7 @@
                                         </span>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="{{ old('email') }}" >
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="{{ $data->usrEmail }}" >
                                         <label for="email">Email address</label>
                                         <span class="text-danger">
                                             @error('email')
@@ -207,7 +216,7 @@
                                         </span>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="ABCXYZ" value="{{ old('firstName') }}" >
+                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="ABCXYZ" value="{{ $data->usrFirstName }}" >
                                         <label for="firstName">First Name</label>
                                         <span class="text-danger">
                                             @error('firstName')
@@ -216,7 +225,7 @@
                                         </span>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Pham"value="{{ old('lastName') }}" >
+                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Pham"value="{{ $data->usrLastName }}" >
                                         <label for="lastName">Last Name</label>
                                         <span class="text-danger">
                                             @error('lastName')
@@ -225,7 +234,7 @@
                                         </span>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="0945493371"value="{{ old('telephone') }}" >
+                                        <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="0945493371"value="{{ $data->usrTel }}" >
                                         <label for="telephone">Telephone</label>
                                         <span class="text-danger">
                                             @error('telephone')
@@ -234,7 +243,7 @@
                                         </span>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" name="address" id="address" placeholder="0945493371" value="{{ old('address') }}">
+                                        <input type="text" class="form-control" name="address" id="address" placeholder="0945493371" value="{{ $data->usrAddr }}">
                                         <label for="address">Address</label>
                                         <span class="text-danger">
                                             @error('address')
@@ -243,7 +252,7 @@
                                         </span>
                                     </div>
                                     <br><br>
-                                    <button type="submit" class="btn btn-primary">Add</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                     <a href="{{url('admin/userList')}}" class="btn btn-danger">Back</a>
                                 </form>
                             </div>

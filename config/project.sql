@@ -22,6 +22,7 @@ create table admins (
     admLastName varchar(30),
     admTel varchar(10)
 );
+select * from admins;
 
 create table themes (
 	themeID int auto_increment primary key unique,

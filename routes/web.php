@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,10 @@ Route::post('admin/userSave', [UserController::class, 'save']);
 Route::get('admin/userEdit/{id}', [UserController::class, 'edit']);
 Route::get('admin/userUpdate', [UserController::class, 'update']);
 Route::get('admin/userDelete/{id}', [UserController::class, 'delete']);
+
+Route::get('admin/adminList', [AdminController::class, 'index']);
+Route::get('admin/adminAdd', [AdminController::class, 'add']);
+Route::post('admin/adminSave', [AdminController::class, 'save']);
+Route::get('admin/adminEdit/{id}', [AdminController::class, 'edit']);
+Route::get('admin/adminUpdate', [AdminController::class, 'update']);
+Route::get('admin/adminDelete/{id}', [AdminController::class, 'delete']);

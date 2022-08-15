@@ -120,13 +120,13 @@ class UserController extends Controller
         
         $id = $request->id;
         User::where('usrID', '=', $id)->update([
-            'usrUsername' => $request->name,    
-            'usrPassword' => Hash::make($request->price),
-            'usrFirstName' => $request->detail,
-            'usrLastName' => $request->image1,
-            'usrTel' => $request->image2,
-            'usrAddr' => $request->image3,
-            'usrEmail' => $request->theme
+            'usrUsername' => $request->username,    
+            'usrPassword' => Hash::make($request->password),
+            'usrFirstName' => $request->firstName,
+            'usrLastName' => $request->lastName,
+            'usrTel' => $request->telephone,
+            'usrAddr' => $request->address,
+            'usrEmail' => $request->email
         ]);
 
         return redirect()->back()->with('success', 'User update successfully');

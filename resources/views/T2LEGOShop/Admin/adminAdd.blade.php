@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>T2LEGOShop - User Add</title>
+    <title>T2LEGOShop - Admin Add</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -171,13 +171,19 @@
                     <div class="contrainer" style="margin: top 20px;">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1>Add new user</h1>
+                                <h1>Add new admin</h1>
                                 @if(Session::has('success'))
                                     <div class="alert alert-success" role ="alert">
                                         {{Session::get('success')}}
                                     </div>
                                 @endif    
-                                <form action="{{ url('admin/userSave') }}" method="post">
+                                <form action="{{ url('admin/adminSave') }}" method="post">
+                                    @if (Session::has('success'))
+                                        <div class="alert alert-success">{{ Session::get('success') }}</div>
+                                    @endif
+                                    @if (Session::has('fail'))
+                                        <div class="alert alert-danger">{{ Session::get('fail') }}</div>
+                                    @endif
                                     @csrf
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" name="username" id="username" placeholder="peguin818" value="{{ old('username') }}" >
@@ -193,15 +199,6 @@
                                         <label for="password">Password</label>
                                         <span class="text-danger">
                                             @error('password')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="{{ old('email') }}" >
-                                        <label for="email">Email address</label>
-                                        <span class="text-danger">
-                                            @error('email')
                                                 {{ $message }}
                                             @enderror
                                         </span>
@@ -233,18 +230,9 @@
                                             @enderror
                                         </span>
                                     </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" name="address" id="address" placeholder="0945493371" value="{{ old('address') }}">
-                                        <label for="address">Address</label>
-                                        <span class="text-danger">
-                                            @error('address')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
                                     <br><br>
                                     <button type="submit" class="btn btn-primary">Add</button>
-                                    <a href="{{url('admin/userList')}}" class="btn btn-danger">Back</a>
+                                    <a href="{{url('admin/adminList')}}" class="btn btn-danger">Back</a>
                                 </form>
                             </div>
                         </div>
