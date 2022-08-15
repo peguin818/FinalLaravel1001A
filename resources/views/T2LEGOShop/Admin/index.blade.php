@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <title>T2LEGOShop - Admin Dashboard</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -33,13 +33,6 @@
 
 <body>
     <div class="container-fluid position-relative d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
 
 
         <!-- Sidebar Start -->
@@ -59,13 +52,13 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="{{ url('admin/') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{{ url('admin/productList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Products</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Themes</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Users</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Administrators</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Orders</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Order Details</a>
+                    <a href="{{ url('admin/themeList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Themes</a>
+                    <a href="{{ url('admin/userList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Users</a>
+                    <a href="{{ url('admin/adminList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Administrators</a>
+                    <a href="{{ url('admin/orderList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Orders</a>
+                    <a href="{{ url('admin/orderDetailList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Order Details</a>
                 </div>
             </nav>
         </div>

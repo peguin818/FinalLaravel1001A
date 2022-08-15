@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <title>T2LEGOShop - Product List</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -46,7 +46,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>T2LEGOShop</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -59,13 +59,13 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="{{ url('admin/') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{{ url('admin/productList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Products</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Themes</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Users</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Administrators</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Orders</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Order Details</a>
+                    <a href="{{ url('admin/themeList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Themes</a>
+                    <a href="{{ url('admin/userList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Users</a>
+                    <a href="{{ url('admin/adminList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Administrators</a>
+                    <a href="{{ url('admin/orderList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Orders</a>
+                    <a href="{{ url('admin/orderDetailList') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Order Details</a>
                 </div>
             </nav>
         </div>
@@ -178,13 +178,13 @@
                                     </div>
                                 @endif
                                 <div style="margin-left: 5%; float: left">
-                                    <a href="{{url('productList')}}" class="btn btn-success pull-left">Home</a>
+                                    <a href="{{url('admin/productList')}}" class="btn btn-success pull-left">Home</a>
                                 </div>
                                 <div style="margin-left: 5%; float: left">
-                                    <a href="{{url('themeList')}}" class="btn btn-success pull-left">Theme List</a>
+                                    <a href="{{url('admin/themeList')}}" class="btn btn-success pull-left">Theme List</a>
                                 </div>
                                 <div style="margin-left: 5%; float: left">
-                                    <a href="{{url ('productAdd')}}" class="btn btn-success pull-right">Add New Product</a>
+                                    <a href="{{url ('admin/productAdd')}}" class="btn btn-success pull-right">Add New Product</a>
                                 </div>
                                 <br><br>
                                 <table class="table table-striped table-bordered">
@@ -222,8 +222,8 @@
                                                     <!--{{$row->prdImage3}}-->
                                                 </td>
                                                 <td>
-                                                    <a href="{{url('productEdit/' . $row->prdID)}}" class="btn btn-primary">Edit</a>
-                                                    <a href="{{url('productDelete/' . $row->prdID)}}" class="btn btn-danger" onclick="return confirm('You are about to delete a Product');">Delete</a>
+                                                    <a href="{{url('admin/productEdit/' . $row->prdID)}}" class="btn btn-primary">Edit</a>
+                                                    <a href="{{url('admin/productDelete/' . $row->prdID)}}" class="btn btn-danger" onclick="return confirm('You are about to delete a Product');">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach

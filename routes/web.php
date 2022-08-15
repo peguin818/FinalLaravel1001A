@@ -41,6 +41,11 @@ Route::get('signup', [UserController::class, 'signup']);
 Route::post('userSignup', [UserController::class, 'userSignup']);
 Route::get('signout', [UserController::class, 'userSignout']);
 
-Route::get('admin/', [WebsiteController::class, 'adminIndex'])->middleware('');
+Route::get('admin/', [WebsiteController::class, 'adminIndex']);
 Route::get('admin/productList', [WebsiteController::class, 'productList']);
+Route::get('admin/productAdd', [WebsiteController::class, 'productAdd']);
+Route::get('admin/productEdit/{id}', [WebsiteController::class, 'productEdit']);
+Route::get('admin/productUpdate', [WebsiteController::class, 'productUpdate']);
+Route::get('admin/productDelete/{id}', [WebsiteController::class, 'productDelete']);
+Route::post('admin/productSave', [WebsiteController::class, 'productSave']);
 Route::get('admin/userList', [UserController::class, 'index']);
