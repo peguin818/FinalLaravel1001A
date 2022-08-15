@@ -36,6 +36,7 @@ Route::get('products', [WebsiteController::class, 'products']);
 Route::get('contact', [WebsiteController::class, 'contact']);
 Route::get('about', [WebsiteController::class, 'about']);
 Route::get('signin', [UserController::class, 'signin']);
+Route::post('userSignin', [UserController::class, 'userSignin']);
 Route::get('signup', [UserController::class, 'signup']);
 Route::post('userSignup', [UserController::class, 'userSignup']);
 

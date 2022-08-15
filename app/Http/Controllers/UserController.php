@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
+use Session;
+use Illuminate\Support\Facades\Hash as FacadesHash;
 use phpDocumentor\Reflection\DocBlock\Tags\Uses;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class UserController extends Controller
 {
@@ -37,7 +40,7 @@ class UserController extends Controller
 
         $user = new User();
         $user->usrUsername = $request->username;
-        $user->usrPassword = $request->password;
+        $user->usrPassword = Hash::make($request->password);
         $user->usrEmail = $request->email;
         $user->usrFirstName = $request->firstName;
         $user->usrLastName = $request->lastName;
@@ -50,6 +53,26 @@ class UserController extends Controller
             return back()->with('success', 'Sign up successfully');
         } else {
             return back()->with('fail', 'Sign up unsuccessfully');
+        }
+    }
+
+    public function userSignin(Request $request){
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        $user = User::where('usrUsername', '=', $request->username)->first();
+
+        if($user){
+            if(Hash::check($request->password, $user->usrPassword)){
+                $request->session()->put('loginID', $user->usrID);
+                return redirect('/');
+            } else {
+                return back()->with('fail', 'Password is not correct');
+            }
+        } else {
+            return back()->with('fail', 'Username not found');
         }
     }
 }
