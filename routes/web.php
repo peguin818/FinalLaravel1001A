@@ -59,4 +59,6 @@ Route::get('admin/themeDelete/{id}', [ThemeController::class, 'delete']);
 Route::get('admin/userList', [UserController::class, 'index']);
 Route::get('admin/userAdd', [UserController::class, 'add']);
 Route::post('admin/userSave', [UserController::class, 'save']);
-Route::get('admin/user', [UserController::class, 'add']);
+Route::get('admin/userEdit/{id}', [UserController::class, 'edit']);
+Route::get('admin/userUpdate', [UserController::class, 'update']);
+Route::get('admin/userDelete/{id}', [UserController::class, 'delete']);
