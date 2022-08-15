@@ -86,8 +86,7 @@ class WebsiteController extends Controller
 
     public function productEdit($id) {
         $data = Product::where('prdID', '=', $id)->first();
-        $theme = Theme::get();
-        return view('T2LEGOShop.Admin.productEdit', compact('data', 'theme'));
+        return view('T2LEGOShop.Admin.productEdit', compact('data'));
     }
 
     public function productUpdate(Request $request) {
