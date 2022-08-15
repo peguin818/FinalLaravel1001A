@@ -16,12 +16,12 @@ class ProductController extends Controller
         ->select('products.*', 'themes.themeName')
         ->get();
         
-        return view('productList', compact('data'));
+        return view('T2LEGOShop.Admin.productList', compact('data'));
     }
 
     public function add() {
         $theme = Theme::get();
-        return view('productAdd', compact('theme'));
+        return view('T2LEGOShop.Admin.productAdd', compact('theme'));
     }
 
     public function save(Request $request) {
@@ -60,14 +60,15 @@ class ProductController extends Controller
 
     public function edit($id) {
         $data = Product::where('prdID', '=', $id)->first();
-        return view('productEdit', compact('data'));
+        $theme = Theme::get();
+        return view('T2LEGOShop.Admin.productEdit', compact('data', 'theme'));
     }
 
     public function update(Request $request) {
         
         $id = $request->id;
         Product::where('prdID', '=', $id)->update([
-            'prdName' => $request->name,
+            'prdName' => $request->name,    
             'prdPrice' => $request->price,
             'prdDetail' => $request->detail,
             'prdImage1' => $request->image1,

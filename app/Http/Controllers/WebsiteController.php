@@ -35,79 +35,53 @@ class WebsiteController extends Controller
     public function adminIndex() {
         return view('T2LEGOShop/Admin.index');
     }
-
-    public function productList() {
-        $data = DB::table('products')
-        ->join('themes', 'themes.themeID', 'products.themeID')
-        ->select('products.*', 'themes.themeName')
-        ->get();
-
-        return view('T2LEGOShop/Admin.productList', compact('data'));
-    }
-
-    public function productAdd() {
-        $theme = Theme::get();
-        return view('T2LEGOShop.Admin.productAdd', compact('theme'));
-    }
-
-    public function productSave(Request $request) {
-        $request->validate([
-            'id' => 'required',
-            'name' => 'required',
-            'price' => 'required',
-            'detail' => 'required',
-            'image1' => 'required',
-            'theme' => 'required',
-        ]);
-
-        $id = $request->id;
-        $name = $request->name;
-        $price = $request->price;
-        $detail = $request->detail;
-        $image1 = $request->image1;
-        $image2 = $request->image2;
-        $image3 = $request->image3;
-        $theme = $request->theme;
-
-        $product = new Product();
-        
-        $product->prdID = $id;
-        $product->prdName = $name;
-        $product->prdPrice = $price;
-        $product->prdDetail = $detail;
-        $product->prdImage1 = $image1;
-        $product->prdImage2 = $image2;
-        $product->prdImage3 = $image3;
-        $product->themeID = $theme;
-        $product->save();
-
-        return redirect()->back()->with('success', 'Product added successfully');
-    }
-
-    public function productEdit($id) {
-        $data = Product::where('prdID', '=', $id)->first();
-        return view('T2LEGOShop.Admin.productEdit', compact('data'));
-    }
-
-    public function productUpdate(Request $request) {
-        
-        $id = $request->id;
-        Product::where('prdID', '=', $id)->update([
-            'prdName' => $request->name,
-            'prdPrice' => $request->price,
-            'prdDetail' => $request->detail,
-            'prdImage1' => $request->image1,
-            'prdImage2' => $request->image2,
-            'prdImage3' => $request->image3,
-            'themeID' => $request->theme
-        ]);
-
-        return redirect()->back()->with('success', 'Product update successfully');
-    }
-
-    public function productDelete($id) {
-        Product::where('prdID', '=', $id)->delete();
-        return redirect()->back()->with('success', 'Product delete successfully');
-    }
     
+    public function themeList()
+    {
+        $data = Theme::get();
+        return view('T2LEGOShop.Admin.themeList', compact('data'));
+    }
+
+    public function themeAdd() {
+        return view('T2LEGOShop.Admin.themeAdd');
+    }
+
+    public function themeSave(Request $request) {
+        $request->validate([
+            'name' => 'required',
+            'detail' => 'required',
+        ]);
+
+        $name = $request->name;
+        $detail = $request->detail;
+
+        $theme = new Theme();
+        
+        $theme->themeName = $name;
+        $theme->themeDetail = $detail;
+        $theme->save();
+
+        return redirect()->back()->with('success', 'Theme added successfully');
+    }
+
+    public function themeEdit($id) {
+        $data = Theme::where('themeID', '=', $id)->first();
+        return view('T2LEGOShop.Admin.themeEdit', compact('data'));
+    }
+
+    public function themeUpdate(Request $request) {
+        
+        $id = $request->id;
+        Theme::where('themeID', '=', $id)->update([
+            'themeName' => $request->name,
+            'themeDetail' => $request->detail
+        ]);
+
+        return redirect()->back()->with('success', 'Theme update successfully');
+    }
+
+    public function themeDelete($id) {
+        Theme::where('themeID', '=', $id)->delete();
+        return redirect()->back()->with('success', 'Theme delete successfully');
+    }
 }

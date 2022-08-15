@@ -15,7 +15,7 @@ class ThemeController extends Controller
     public function index()
     {
         $data = Theme::get();
-        return view('themeList', compact('data'));
+        return view('T2LEGOShop.Admin.themeList', compact('data'));
     }
 
     /**
@@ -24,7 +24,7 @@ class ThemeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function add() {
-        return view('themeAdd');
+        return view('T2LEGOShop.Admin.themeAdd');
     }
 
     /**
@@ -70,7 +70,7 @@ class ThemeController extends Controller
      */
     public function edit($id) {
         $data = Theme::where('themeID', '=', $id)->first();
-        return view('themeEdit', compact('data'));
+        return view('T2LEGOShop.Admin.themeEdit', compact('data'));
     }
 
     /**

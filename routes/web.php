@@ -42,10 +42,18 @@ Route::post('userSignup', [UserController::class, 'userSignup']);
 Route::get('signout', [UserController::class, 'userSignout']);
 
 Route::get('admin/', [WebsiteController::class, 'adminIndex']);
-Route::get('admin/productList', [WebsiteController::class, 'productList']);
-Route::get('admin/productAdd', [WebsiteController::class, 'productAdd']);
-Route::get('admin/productEdit/{id}', [WebsiteController::class, 'productEdit']);
-Route::get('admin/productUpdate', [WebsiteController::class, 'productUpdate']);
-Route::get('admin/productDelete/{id}', [WebsiteController::class, 'productDelete']);
-Route::post('admin/productSave', [WebsiteController::class, 'productSave']);
+Route::get('admin/productList', [ProductController::class, 'index']);
+Route::get('admin/productAdd', [ProductController::class, 'add']);
+Route::post('admin/productSave', [ProductController::class, 'save']);
+Route::get('admin/productEdit/{id}', [ProductController::class, 'edit']);
+Route::get('admin/productUpdate', [ProductController::class, 'update']);
+Route::get('admin/productDelete/{id}', [ProductController::class, 'delete']);
+
+Route::get('admin/themeList', [ThemeController::class, 'index']);
+Route::get('admin/themeAdd', [ThemeController::class, 'add']);
+Route::post('admin/themeSave', [ThemeController::class, 'save']);
+Route::get('admin/themeEdit/{id}', [ThemeController::class, 'edit']);
+Route::get('admin/themeUpdate', [ThemeController::class, 'update']);
+Route::get('admin/themeDelete/{id}', [ThemeController::class, 'delete']);
+
 Route::get('admin/userList', [UserController::class, 'index']);

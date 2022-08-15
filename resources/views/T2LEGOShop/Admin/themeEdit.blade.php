@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>T2LEGOShop - Theme List</title>
+    <title>T2LEGOShop - Product Edit</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -171,45 +171,45 @@
                     <div class="contrainer" style="margin: top 20px;">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1 class="text-center">Themes List</h1>
+                                <h1>Edit theme</h1>
                                 @if(Session::has('success'))
-                                    <div class="alert alert-danger" role ="alert">
+                                    <div class="alert alert-success" role ="alert">
                                         {{Session::get('success')}}
                                     </div>
-                                @endif
-                                <div style="margin-left: 5%; float: left">
-                                    <a href="{{url('admin/themeList')}}" class="btn btn-success pull-left">Home</a>
-                                </div>
-                                <div style="margin-left: 5%; float: left">
-                                    <a href="{{url('admin/productList')}}" class="btn btn-success pull-left">Product List</a>
-                                </div>
-                                <div style="margin-left: 5%; float: left">
-                                    <a href="{{url ('admin/themeAdd')}}" class="btn btn-success pull-right">Add New Theme</a>
-                                </div>
-                                <br><br>
-                                <table class="table table-striped table-bordered">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Details</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($data as $row)
-                                            <tr>
-                                                <td>{{$row->themeID}}</td>
-                                                <td>{{$row->themeName}}</td>
-                                                <td>{{$row->themeDetail}}</td>
-                                                <td>
-                                                    <a href="{{url('admin/themeEdit/' . $row->themeID)}}" class="btn btn-primary">Edit</a>
-                                                    <a href="{{url('admin/themeDelete/' . $row->themeID)}}" class="btn btn-danger" onclick="return confirm('You are about to delete a Theme');">Delete</a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                @endif    
+                                <form method="POST" action="{{url('admin/themeUpdate')}}">
+                                    @csrf
+                                    <div class="md-3">
+                                        <label for="id" class="form-label">ID: </label>
+                                        <input type="text" class="form-control" name="id" value="{{$data->themeID}}" readonly>
+                                        @error('id')
+                                            <div class="alert alert-danger" role ="alert">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="md-3">
+                                        <label for="name" class="form-label">Name: </label>
+                                        <input type="text" class="form-control" name="name" value="{{$data->themeName}}">
+                                        @error('name')
+                                            <div class="alert alert-danger" role ="alert">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="md-3">
+                                        <label for="detail" class="form-label">Details: </label>
+                                        <textarea name="detail" id="detail" class="form-control">{{$data->themeDetail}}</textarea>
+                                        @error('detail')
+                                            <div class="alert alert-danger" role ="alert">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <br><br>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <a href="{{url('admin/themeList')}}" class="btn btn-danger">Back</a>
+                                </form> 
                             </div>
                         </div>
                     </div>
