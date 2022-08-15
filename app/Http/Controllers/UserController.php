@@ -37,24 +37,19 @@ class UserController extends Controller
 
         $user = new User();
         $user->usrUsername = $request->username;
-        $user->usrPassword = Hash::make($request->password);
+        $user->usrPassword = $request->password;
         $user->usrEmail = $request->email;
         $user->usrFirstName = $request->firstName;
         $user->usrLastName = $request->lastName;
         $user->usrTel = $request->telephone;
         $user->usrAddr = $request->address;
 
-        $user->save();
+        $result = $user->save();
 
-        /*if ($result) {
+        if ($result) {
             return back()->with('success', 'Sign up successfully');
         } else {
             return back()->with('fail', 'Sign up unsuccessfully');
-        }*/
-
-        return redirect()->back()->with('success', 'Sign up successfully');
-
-
+        }
     }
-
 }
