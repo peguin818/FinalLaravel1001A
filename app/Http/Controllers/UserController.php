@@ -16,12 +16,6 @@ class UserController extends Controller
     public function signup() {
         return view('T2LEGOShop.Admin.signup');
     }
-    
-    public function index()
-    {
-        $data = User::get();
-        return view('list', compact('data'));
-    }
 
     public function userSignup(Request $request) {
         $request->validate([
@@ -33,7 +27,6 @@ class UserController extends Controller
             'telephone' => 'required',
             'address' => 'required'
         ]);
-
 
         $user = new User();
         $user->usrUsername = $request->username;
@@ -78,5 +71,69 @@ class UserController extends Controller
             Session::pull('loginID');
             return redirect('/');
         }
+    }
+
+    public function index() {
+        $data = User::get();
+        return view('T2LEGOShop.Admin.userList', compact('data'));
+    }
+
+    public function add() {
+        return view('T2LEGOShop.Admin.userAdd');
+    }
+
+    public function save(Request $request) {
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'telephone' => 'required',
+            'address' => 'required',
+            'email' => 'required'
+        ]);
+
+        $user = new User();
+        $user->usrUsername = $request->username;
+        $user->usrPassword = Hash::make($request->password);
+        $user->usrEmail = $request->email;
+        $user->usrFirstName = $request->firstName;
+        $user->usrLastName = $request->lastName;
+        $user->usrTel = $request->telephone;
+        $user->usrAddr = $request->address;
+        
+        $result = $user->save();
+
+        if ($result) {
+            return back()->with('success', 'User add successfully');
+        } else {
+            return back()->with('fail', 'User add unsuccessfully');
+        }
+    }
+
+    public function edit($id) {
+        $data = User::where('usrID', '=', $id)->first();
+        return view('T2LEGOShop.Admin.userEdit', compact('data'));
+    }
+
+    public function update(Request $request) {
+        
+        $id = $request->id;
+        User::where('usrID', '=', $id)->update([
+            'usrUsername' => $request->name,    
+            'usrPassword' => Hash::make($request->price),
+            'usrFirstName' => $request->detail,
+            'usrLastName' => $request->image1,
+            'usrTel' => $request->image2,
+            'usrAddr' => $request->image3,
+            'usrEmail' => $request->theme
+        ]);
+
+        return redirect()->back()->with('success', 'User update successfully');
+    }
+
+    public function delete($id) {
+        User::where('usrID', '=', $id)->delete();
+        return redirect()->back()->with('success', 'User delete successfully');
     }
 }

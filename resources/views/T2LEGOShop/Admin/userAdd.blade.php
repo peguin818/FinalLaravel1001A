@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>T2LEGOShop - User List</title>
+    <title>T2LEGOShop - User Add</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -171,48 +171,87 @@
                     <div class="contrainer" style="margin: top 20px;">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1 class="text-center">User List</h1>
+                                <h1>Add new user</h1>
                                 @if(Session::has('success'))
-                                    <div class="alert alert-danger" role ="alert">
+                                    <div class="alert alert-success" role ="alert">
                                         {{Session::get('success')}}
                                     </div>
-                                @endif
-                                <div style="margin-left: 5%; float: left">
-                                    <a href="{{url ('admin/userAdd')}}" class="btn btn-success pull-right">Add New User</a>
-                                </div>
-                                <br><br>
-                                <table class="table table-striped table-bordered">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Username</th>
-                                            <th>Password</th>
-                                            <th>Email</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Telephone</th>
-                                            <th>Address</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($data as $row)
-                                            <tr>
-                                                <td>{{$row->usrID}}</td>
-                                                <td>{{$row->usrUsername}}</td>
-                                                <td>{{$row->usrPassword}}</td>
-                                                <td>{{$row->usrEmail}}</td>
-                                                <td>{{$row->usrFirstName}}</td>
-                                                <td>{{$row->usrLastName}}</td>
-                                                <td>{{$row->usrTel}}</td>
-                                                <td>{{$row->usrAddr}}</td>
-                                                <td>
-                                                    <a href="{{url('admin/userEdit/' . $row->usrID)}}" class="btn btn-primary">Edit</a>
-                                                    <a href="{{url('admin/userDelete/' . $row->usrID)}}" class="btn btn-danger" onclick="return confirm('You are about to delete a User');">Delete</a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                @endif    
+                                <form action="{{ url('admin/userSave') }}" method="post">
+                                    @if (Session::has('success'))
+                                        <div class="alert alert-success">{{ Session::get('success') }}</div>
+                                    @endif
+                                    @if (Session::has('fail'))
+                                        <div class="alert alert-danger">{{ Session::get('fail') }}</div>
+                                    @endif
+                                    @csrf
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="peguin818" value="{{ old('username') }}" >
+                                        <label for="username">Username</label>
+                                        <span class="text-danger">
+                                            @error('username')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                    <div class="form-floating mb-4">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="{{ old('password') }}">
+                                        <label for="password">Password</label>
+                                        <span class="text-danger">
+                                            @error('password')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="{{ old('email') }}" >
+                                        <label for="email">Email address</label>
+                                        <span class="text-danger">
+                                            @error('email')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="ABCXYZ" value="{{ old('firstName') }}" >
+                                        <label for="firstName">First Name</label>
+                                        <span class="text-danger">
+                                            @error('firstName')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Pham"value="{{ old('lastName') }}" >
+                                        <label for="lastName">Last Name</label>
+                                        <span class="text-danger">
+                                            @error('lastName')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="0945493371"value="{{ old('telephone') }}" >
+                                        <label for="telephone">Telephone</label>
+                                        <span class="text-danger">
+                                            @error('telephone')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="address" id="address" placeholder="0945493371" value="{{ old('address') }}">
+                                        <label for="address">Address</label>
+                                        <span class="text-danger">
+                                            @error('address')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                    <br><br>
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                    <a href="{{url('admin/userList')}}" class="btn btn-danger">Back</a>
+                                </form>
                             </div>
                         </div>
                     </div>

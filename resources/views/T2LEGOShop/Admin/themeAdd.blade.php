@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>T2LEGOShop - User List</title>
+    <title>T2LEGOShop - Theme Add</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -171,48 +171,36 @@
                     <div class="contrainer" style="margin: top 20px;">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1 class="text-center">User List</h1>
+                                <h1>Add new theme</h1>
                                 @if(Session::has('success'))
-                                    <div class="alert alert-danger" role ="alert">
+                                    <div class="alert alert-success" role ="alert">
                                         {{Session::get('success')}}
                                     </div>
-                                @endif
-                                <div style="margin-left: 5%; float: left">
-                                    <a href="{{url ('admin/userAdd')}}" class="btn btn-success pull-right">Add New User</a>
-                                </div>
-                                <br><br>
-                                <table class="table table-striped table-bordered">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Username</th>
-                                            <th>Password</th>
-                                            <th>Email</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Telephone</th>
-                                            <th>Address</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($data as $row)
-                                            <tr>
-                                                <td>{{$row->usrID}}</td>
-                                                <td>{{$row->usrUsername}}</td>
-                                                <td>{{$row->usrPassword}}</td>
-                                                <td>{{$row->usrEmail}}</td>
-                                                <td>{{$row->usrFirstName}}</td>
-                                                <td>{{$row->usrLastName}}</td>
-                                                <td>{{$row->usrTel}}</td>
-                                                <td>{{$row->usrAddr}}</td>
-                                                <td>
-                                                    <a href="{{url('admin/userEdit/' . $row->usrID)}}" class="btn btn-primary">Edit</a>
-                                                    <a href="{{url('admin/userDelete/' . $row->usrID)}}" class="btn btn-danger" onclick="return confirm('You are about to delete a User');">Delete</a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                @endif    
+                                <form method="POST" action="{{url('admin/themeSave')}}">
+                                    @csrf
+                                    <div class="md-3">
+                                        <label for="name" class="form-label">Name: </label>
+                                        <input type="text" class="form-control" name="name" placeholder="Enter Theme Name here" value="{{old('name')}}">
+                                        @error('name')
+                                            <div class="alert alert-danger" role ="alert">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="md-3">
+                                        <label for="detail" class="form-label">Details: </label>
+                                        <textarea name="detail" id="detail" class="form-control" placeholder="Enter Product Details here">{{old('detail')}}</textarea>
+                                        @error('detail')
+                                            <div class="alert alert-danger" role ="alert">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <br><br>
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                    <a href="{{url('admin/themeList')}}" class="btn btn-danger">Back</a>
+                                </form>
                             </div>
                         </div>
                     </div>
