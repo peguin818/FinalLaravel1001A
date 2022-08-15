@@ -17,7 +17,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('productList', [ProductController::class, 'index']);
+/*Route::get('productList', [ProductController::class, 'index']);
 Route::get('themeList', [ThemeController::class, 'index']);
 Route::get('productAdd', [ProductController::class, 'add']);
 Route::get('themeAdd', [ThemeController::class, 'add']);
@@ -28,7 +28,7 @@ Route::post('productUpdate', [ProductController::class, 'update']);
 Route::get('themeEdit/{id}', [ThemeController::class, 'edit']);
 Route::post('themeUpdate', [ThemeController::class, 'update']);
 Route::get('productDelete/{id}', [ProductController::class, 'delete']);
-Route::get('themeDelete/{id}', [ThemeController::class, 'delete']);
+Route::get('themeDelete/{id}', [ThemeController::class, 'delete']);*/
 
 Route::get('/', [WebsiteController::class, 'index']);
 Route::get('featured', [WebsiteController::class, 'featured']);
@@ -39,6 +39,8 @@ Route::get('signin', [UserController::class, 'signin']);
 Route::post('userSignin', [UserController::class, 'userSignin']);
 Route::get('signup', [UserController::class, 'signup']);
 Route::post('userSignup', [UserController::class, 'userSignup']);
+Route::get('signout', [UserController::class, 'userSignout']);
 
-Route::get('admin/', [WebsiteController::class, 'adminIndex']);
+Route::get('admin/', [WebsiteController::class, 'adminIndex'])->middleware('');
 Route::get('admin/productList', [WebsiteController::class, 'productList']);
+Route::get('admin/userList', [UserController::class, 'index']);

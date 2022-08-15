@@ -55,7 +55,7 @@
                             @endif
                             @csrf
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="peguin818"  >
+                                <input type="text" class="form-control" name="username" id="username" placeholder="peguin818" value="{{ old('username') }}" >
                                 <label for="username">Username</label>
                                 <span class="text-danger">
                                     @error('username')
@@ -64,7 +64,7 @@
                                 </span>
                             </div>
                             <div class="form-floating mb-4">
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" >
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="{{ old('password') }}">
                                 <label for="password">Password</label>
                                 <span class="text-danger">
                                     @error('password')
@@ -73,7 +73,7 @@
                                 </span>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"  >
+                                <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="{{ old('email') }}" >
                                 <label for="email">Email address</label>
                                 <span class="text-danger">
                                     @error('email')
@@ -82,7 +82,7 @@
                                 </span>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="ABCXYZ"  >
+                                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="ABCXYZ" value="{{ old('firstName') }}" >
                                 <label for="firstName">First Name</label>
                                 <span class="text-danger">
                                     @error('firstName')
@@ -91,7 +91,7 @@
                                 </span>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Pham" >
+                                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Pham"value="{{ old('lastName') }}" >
                                 <label for="lastName">Last Name</label>
                                 <span class="text-danger">
                                     @error('lastName')
@@ -100,7 +100,7 @@
                                 </span>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="0945493371" >
+                                <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="0945493371"value="{{ old('telephone') }}" >
                                 <label for="telephone">Telephone</label>
                                 <span class="text-danger">
                                     @error('telephone')
@@ -109,7 +109,7 @@
                                 </span>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="address" id="address" placeholder="0945493371">
+                                <input type="text" class="form-control" name="address" id="address" placeholder="0945493371" value="{{ old('address') }}">
                                 <label for="address">Address</label>
                                 <span class="text-danger">
                                     @error('address')

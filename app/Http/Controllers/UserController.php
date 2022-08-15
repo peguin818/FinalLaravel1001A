@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Hash;
-use Session;
-use Illuminate\Support\Facades\Hash as FacadesHash;
-use phpDocumentor\Reflection\DocBlock\Tags\Uses;
-use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -28,9 +25,9 @@ class UserController extends Controller
 
     public function userSignup(Request $request) {
         $request->validate([
-            'username' => 'required|unique:users',
+            'username' => 'required',
             'password' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required',
             'firstName' => 'required',
             'lastName' => 'required',
             'telephone' => 'required',
@@ -66,13 +63,20 @@ class UserController extends Controller
 
         if($user){
             if(Hash::check($request->password, $user->usrPassword)){
-                $request->session()->put('loginID', $user->usrID);
+                $request->session()->put('loginID', $user->usrUsername);
                 return redirect('/');
             } else {
                 return back()->with('fail', 'Password is not correct');
             }
         } else {
             return back()->with('fail', 'Username not found');
+        }
+    }
+
+    public function userSignout() {
+        if(Session::has('loginID')) {
+            Session::pull('loginID');
+            return redirect('/');
         }
     }
 }

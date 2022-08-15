@@ -11,6 +11,8 @@ create table users (
     usrTel varchar(10),
     usrAddr varchar(3000)
 );
+alter table users add usrEmail varchar(3000);
+select * from users;
 
 create table admins (
 	admID int auto_increment primary key unique,
@@ -41,6 +43,7 @@ create table products (
     themeID int not null,
     constraint foreign key (themeID) references themes(themeID) 
 );
+select * from products;
 
 create table orders (
 	orderID bigint auto_increment primary key unique not null,
