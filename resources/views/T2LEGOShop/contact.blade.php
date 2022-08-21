@@ -72,14 +72,36 @@
                 <input type="search" placeholder="Search">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
+              @if (Session::has('loginID'))
               <div class="login_btn-contanier ml-0 ml-lg-5">
                 <a href="">
-                  <img src="web-img/user.png" alt="">
+                  <img src="/web-img/user.png" alt="">
+                  <span>
+                    {{ Session::get('loginID') }}
+                  </span>
+                </a>
+                <a href="{{ url('signout') }}">
+                  <span>
+                    Logout
+                  </span>
+                </a>
+              </div>
+              @else
+              <div class="login_btn-contanier ml-0 ml-lg-5">
+                <a href="{{ url('signup') }}">
+                  <img src="/web-img/user.png" alt="">
+                  <span>
+                    Sign Up
+                  </span>
+                </a>
+                <a href="{{ url('signin') }}">
+                  <img src="/web-img/user.png" alt="">
                   <span>
                     Login
                   </span>
                 </a>
               </div>
+              @endif
             </div>
           </div>
         </nav>

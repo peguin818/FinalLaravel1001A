@@ -46,7 +46,7 @@ Route::get('signout', [UserController::class, 'userSignout']);
 Route::get('admin', [AdminController::class, 'index'])->middleware('isLoggedIn');
 Route::get('admin/signin', [AdminController::class, 'signin'])->middleware('alreadyLoggedIn');
 Route::post('adminSignin', [AdminController::class, 'adminSignin']);
-Route::get('adminSignout', [AdminController::class, 'adminSignout']);
+Route::get('adminSignout', [AdminController::class, 'adminSignout'])->middleware('isLoggedIn');
 
 Route::get('admin/productList', [ProductController::class, 'index'])->middleware('isLoggedIn');
 Route::get('admin/productAdd', [ProductController::class, 'add'])->middleware('isLoggedIn');

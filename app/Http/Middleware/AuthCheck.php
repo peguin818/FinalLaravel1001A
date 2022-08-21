@@ -16,7 +16,7 @@ class AuthCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Session()->has('loginID')) {
+        if(!Session()->has('adminLoginID')) {
             return redirect('admin/signin')->with('fail', 'You need to Sign In FIRST');
         }
         return $next($request);

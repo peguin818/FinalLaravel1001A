@@ -23,7 +23,7 @@ class AdminController extends Controller
 
         if($admin){
             if(Hash::check($request->password, $admin->admPassword)){
-                $request->session()->put('loginID', $admin->admUsername);
+                $request->session()->put('adminLoginID', $admin->admUsername);
                 return redirect('admin/');
             } else {
                 return back()->with('fail', 'Password is not correct');
@@ -34,16 +34,16 @@ class AdminController extends Controller
     }
 
     public function adminSignout() {
-        if(Session::has('loginID')) {
-            Session::pull('loginID');
+        if(Session::has('adminLoginID')) {
+            Session::pull('adminLoginID');
             return redirect('admin/signin');
         }
     }
 
     public function index(Request $request) {
         $data = array();
-        if(Session::has('loginID')) {
-            $data = Admin::where('admUsername', '=', Session::get('loginID'))->first();
+        if(Session::has('adminLoginID')) {
+            $data = Admin::where('admUsername', '=', Session::get('adminLoginID'))->first();
         }
         return view('T2LEGOShop/Admin.index', compact('data'));
     }
