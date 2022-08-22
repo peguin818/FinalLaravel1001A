@@ -42,13 +42,19 @@ class ThemeController extends Controller
         $name = $request->name;
         $detail = $request->detail;
 
-        $theme = new Theme();
-        
-        $theme->themeName = $name;
-        $theme->themeDetail = $detail;
-        $theme->save();
+        $themeName = Theme::where('themeName', '=', $name);
 
-        return redirect()->back()->with('success', 'Theme added successfully');
+        if($themeName) {
+            return redirect()->back()->with('fail', 'Theme added unsuccessfully, Duplicate Theme Name');
+        } else {
+            $theme = new Theme();
+        
+            $theme->themeName = $name;
+            $theme->themeDetail = $detail;
+            $theme->save();
+    
+            return redirect()->back()->with('success', 'Theme added successfully');
+        }
     }
 
     /**
