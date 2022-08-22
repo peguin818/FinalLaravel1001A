@@ -45,7 +45,7 @@ class ProductController extends Controller
         $productID = Product::where('prdID', '=', $id);
 
         if($productID) {
-            return redirect()->back()->with('fail', 'Product added unsuccessfully');
+            return redirect()->back()->with('fail', 'Product added unsuccessfully, Duplicate product ID');
         } else {
             $product = new Product();
         
