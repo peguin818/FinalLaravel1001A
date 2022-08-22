@@ -42,19 +42,25 @@ class ProductController extends Controller
         $image3 = $request->image3;
         $theme = $request->theme;
 
-        $product = new Product();
-        
-        $product->prdID = $id;
-        $product->prdName = $name;
-        $product->prdPrice = $price;
-        $product->prdDetail = $detail;
-        $product->prdImage1 = $image1;
-        $product->prdImage2 = $image2;
-        $product->prdImage3 = $image3;
-        $product->themeID = $theme;
-        $product->save();
+        $productID = Product::where('prdID', '=', $id);
 
-        return redirect()->back()->with('success', 'Product added successfully');
+        if($productID) {
+            return redirect()->back()->with('fail', 'Product added unsuccessfully');
+        } else {
+            $product = new Product();
+        
+            $product->prdID = $id;
+            $product->prdName = $name;
+            $product->prdPrice = $price;
+            $product->prdDetail = $detail;
+            $product->prdImage1 = $image1;
+            $product->prdImage2 = $image2;
+            $product->prdImage3 = $image3;
+            $product->themeID = $theme;
+            $product->save();
+
+            return redirect()->back()->with('success', 'Product added successfully');
+        }
     }
 
     public function edit($id) {
