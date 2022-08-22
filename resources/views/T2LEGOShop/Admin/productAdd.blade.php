@@ -177,6 +177,11 @@
                                         {{Session::get('success')}}
                                     </div>
                                 @endif    
+                                @if(Session::has('fail'))
+                                    <div class="alert alert-danger" role ="alert">
+                                        {{Session::get('fail')}}
+                                    </div>
+                                @endif
                                 <form method="POST" action="{{url('admin/productSave')}}">
                                     @csrf
                                     <div class="md-3">
