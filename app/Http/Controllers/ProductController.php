@@ -42,7 +42,7 @@ class ProductController extends Controller
         $image3 = $request->image3;
         $theme = $request->theme;
 
-        $productID = Product::where('prdID', '=', $id);
+        $productID = Product::where('prdID', '=', $id)->first();
 
         if($productID) {
             return redirect()->back()->with('fail', 'Product added unsuccessfully, Duplicate Product ID');
