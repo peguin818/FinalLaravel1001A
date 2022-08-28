@@ -180,7 +180,7 @@
                                 <form action="{{ url('admin/adminSave') }}" method="post">
                                     @csrf
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" name=0" id="username" placeholder="peguin818" value="{{ old('username') }}" >
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="peguin818" value="{{ old('username') }}" >
                                         <label for="username">Username</label>
                                         <span class="text-danger">
                                             @error('username')

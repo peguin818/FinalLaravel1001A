@@ -59,7 +59,7 @@ class AdminController extends Controller
 
     public function save(Request $request) {
         $request->validate([
-            'username' => 'required',
+            'username' => 'required',    
             'password' => 'required',
             'firstName' => 'required',
             'lastName' => 'required',
@@ -95,7 +95,7 @@ class AdminController extends Controller
             'admPassword' => Hash::make($request->password),
             'admFirstName' => $request->firstName,
             'admLastName' => $request->lastName,
-            'admTel' => $request->telephone,
+            'admTelephone' => $request->telephone,
         ]);
 
         return redirect()->back()->with('success', 'Admin update successfully');

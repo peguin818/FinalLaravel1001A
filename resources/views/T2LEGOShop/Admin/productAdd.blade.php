@@ -255,19 +255,19 @@
                                     </div>
                                     <br><br>
                                     <button type="submit" class="btn btn-primary">Add</button>
-                                    <a href="{{url('admin/productList')}}" class="btn btn-danger">Back</a>
-                                </form>
+                                    <a href="{{url('admin/')}}" class="btn btn-danger">Back</a>
+                                </form>  
                             </div>
-                        </div>
-                    </div>
+                        </div> 
+                    </div>    
                 </div>
-            </div>
-            <!-- Table End -->
+            </div>  
+            <!-- Table End -->  
 
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
+            <div class="container-fluid pt-4 px-4"> 
+                <div class="bg-secondary rounded-top p-4">  
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
                             &copy; <a href="#">T2LEGOShop</a>, All Right Reserved. 
